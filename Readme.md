@@ -1,11 +1,11 @@
 
 # matches-selector
 
-  Check if an element matches a given selector.
+  Check if an element matches a given selector.  For use with browserify
 
 ## Installation
 
-    $ component install component/matches-selector
+    $ npm install matches-selector
 
 ## Example
 
