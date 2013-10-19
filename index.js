@@ -9,7 +9,8 @@ var proto = Element.prototype;
  * Vendor function.
  */
 
-var vendor = proto.matchesSelector
+var vendor = proto.matches
+  || proto.matchesSelector
   || proto.webkitMatchesSelector
   || proto.mozMatchesSelector
   || proto.msMatchesSelector
