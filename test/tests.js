@@ -21,6 +21,6 @@ test('matchesSelector(el, selector)', function (t) {
   t.assert(true === matches(li, 'li'), 'li = "li"');
   t.assert(false === matches(li, 'div > li'), 'li != "div > li"');
 
-  t.assert(true == matches(ul, 'ul', 'ul = "ul"'));
+  t.assert(true == matches(ul, 'ul', 'ul = "ul"'), 'ul = "ul"');
   t.assert(false == matches(ul, 'body > ul'), 'ul != "body > ul"');
 })
