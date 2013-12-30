@@ -1,17 +1,12 @@
 {
   "name": "matches-selector",
   "version": "1.0.0",
-  "description": "Check if an element matches a given selector.",
-  "keywords": [
-    "browserify",
-    "CSS",
-    "selector"
-  ],
+  "description": "Check if a DOM element matches a given selector, with decent browser support and unit tests.",
+  "keywords": [ "browserify", "CSS", "selector" ],
   "repository": {
     "type": "git",
     "url": "https://github.com/ForbesLindesay/matches-selector.git"
   },
-  "author": "TJ Holowaychuk",
   "license": "MIT",
   "devDependencies": {
     "domify": "~1.1.1",
@@ -39,7 +34,6 @@
       "opera/11.0",
       "opera/17.0",
       "opera/next",
-      "safari/4.0",
       "safari/5.0.5",
       "safari/5.1",
       "safari/6.0",
