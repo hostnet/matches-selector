@@ -1,29 +1,26 @@
+'use strict';
 
-var matches = require('matches-selector')
-  , domify = require('component-domify');
-
-function assert(expr) {
-  if (!expr) throw new Error('assertion failed');
-}
+var test = require('tape');
+var domify = require('domify');
+var matches = require('../');
 
 var ul = domify('<ul><li><em>foo</em></li></ul>');
 var li = ul.children[0];
 var em = li.children[0];
 
-describe('matchesSelector(el, selector)', function(){
-  it('should work', function(){
-    assert(true === matches(em, 'ul li em'));
-    assert(true === matches(em, 'ul em'));
-    assert(true === matches(em, 'ul > li > em'));
-    assert(false === matches(em, 'ul ul em'));
+test('matchesSelector(el, selector)', function (t) {
+  t.plan(10);
 
-    assert(true === matches(li, 'ul li'));
-    assert(true === matches(li, 'ul > li'));
-    assert(true === matches(li, 'li'));
-    assert(false === matches(li, 'div > li'));
+  t.assert(true === matches(em, 'ul li em'), 'em = "ul li em"');
+  t.assert(true === matches(em, 'ul em'), 'em = "ul em"');
+  t.assert(true === matches(em, 'ul > li > em'), 'em = "ul > li > em"');
+  t.assert(false === matches(em, 'ul ul em'), 'em != "ul ul em"');
 
-    assert(true == matches(ul, 'ul'));
-    assert(true == matches(ul, 'div ul'));
-    assert(false == matches(ul, 'body > ul'));
-  })
+  t.assert(true === matches(li, 'ul li'), 'li = "ul li"');
+  t.assert(true === matches(li, 'ul > li'), 'li = "ul > li"');
+  t.assert(true === matches(li, 'li'), 'li = "li"');
+  t.assert(false === matches(li, 'div > li'), 'li != "div > li"');
+
+  t.assert(true == matches(ul, 'ul', 'ul = "ul"'));
+  t.assert(false == matches(ul, 'body > ul'), 'ul != "body > ul"');
 })
