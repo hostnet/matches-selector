@@ -21,7 +21,7 @@
     "run-browser": "~1.0.0"
   },
   "testling": {
-    "files": "test/tests.js",
+    "files": "test/index.js",
     "browsers": [
       "iexplore/8.0",
       "iexplore/10.0",
