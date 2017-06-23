@@ -20,6 +20,7 @@ module.exports = match;
  */
 
 function match(el, selector) {
+  if (!el || el.nodeType !== 1) return false;
   if (vendor) return vendor.call(el, selector);
   var nodes = el.parentNode.querySelectorAll(selector);
   for (var i = 0; i < nodes.length; i++) {

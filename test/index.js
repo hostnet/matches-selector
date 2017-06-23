@@ -9,7 +9,7 @@ var li = ul.children[0];
 var em = li.children[0];
 
 test('matchesSelector(el, selector)', function (t) {
-  t.plan(10);
+  t.plan(12);
 
   t.assert(true === matches(em, 'ul li em'), 'em = "ul li em"');
   t.assert(true === matches(em, 'ul em'), 'em = "ul em"');
@@ -23,4 +23,7 @@ test('matchesSelector(el, selector)', function (t) {
 
   t.assert(true == matches(ul, 'ul', 'ul = "ul"'), 'ul = "ul"');
   t.assert(false == matches(ul, 'body > ul'), 'ul != "body > ul"');
+
+  t.assert(false === matches(em.firstChild, 'ul'), 'match on textNode is false');
+  t.assert(false === matches(null, 'ul'), 'match on null is false');
 })
