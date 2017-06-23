@@ -1,6 +1,6 @@
 'use strict';
 
-var proto = Element.prototype;
+var proto = typeof Element !== 'undefined' ? Element.prototype : {};
 var vendor = proto.matches
   || proto.matchesSelector
   || proto.webkitMatchesSelector
